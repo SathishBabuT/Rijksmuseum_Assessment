@@ -1,0 +1,15 @@
+const arr = ['sathish babu', 'satishh', 'satishhbabu'];
+let groupAnagram = {};
+let result = [];
+arr.forEach(a=>{
+  const str = a.split('').sort().join('').trim();
+  if(groupAnagram[str]) {
+  	groupAnagram[str].push(a);
+  } else {
+  groupAnagram[str] = [a];
+  }
+});
+Object.keys(groupAnagram).forEach(v => {
+	result.push(groupAnagram[v]);
+});
+console.log(result);
